@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 private Button btnAdd;
 private ListView listView;
@@ -26,5 +28,6 @@ private ListView listView;
                 startActivity(intent);
                 finish();
             }
+        }
     }
-}
+

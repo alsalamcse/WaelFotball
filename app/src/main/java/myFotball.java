@@ -1,103 +1,79 @@
 public class myFotball {
 
-    public static String getTIME;
-    private static String ed2Teams;
-    private static String Date;
+    public  String TeamName;
+    private  String date;
+    private  String id;
     private String Place;
     private String Time;
 
-
-
-    public myFotball() {
-
+    public myFotball()
+    {
 
     }
 
-    public myFotball(String Time, String Place, String Date, String ed2Teams) {
-        this.Time = Time;
-        this.Place = Place;
-        this.Date = Date;
-        this.ed2Teams = ed2Teams;
-
-
+    public myFotball(String teamName, String date, String place, String time) {
+        TeamName = teamName;
+        this.date = date;
+        Place = place;
+        Time = time;
     }
 
-    public static String getplace() {
-        return null;
+    public myFotball(String teamName, String date, String id, String place, String time) {
+        TeamName = teamName;
+        this.date = date;
+        this.id = id;
+        Place = place;
+        Time = time;
     }
 
-    public void setEd2Teams(String ed2Teams) {
-        this.ed2Teams = ed2Teams;
+    public String getTeamName() {
+        return TeamName;
     }
 
-    public static String geted2Teams() {
-        return ed2Teams;
+    public String getDate() {
+        return date;
     }
 
-    public void setEdTime(String edTime) {
-        this.Time = Time;
-    }
-
-    public String getEdTime() {
-        return Time;
+    public String getId() {
+        return id;
     }
 
     public String getPlace() {
         return Place;
     }
 
-     public static String getDate() {
-        return Date;
-    }
-
     public String getTime() {
         return Time;
     }
 
-    public String getEd2Teams() {
-        return ed2Teams;
+    public void setTeamName(String teamName) {
+        TeamName = teamName;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public void setPlace(String place) {
         Place = place;
     }
 
-    public void setDate(String date) {
-        Date = date;
-    }
-
     public void setTime(String time) {
         Time = time;
-    }
-
-    public void setPhone_number(String edDate) {
-        this.Date = Date;
-    }
-
-    public String getEdDate() {
-        return Date;
-    }
-
-    public void setEdPlace(String edPlace) {
-        this.Place = Place;
-
-    }
-
-    public String getEdPlace() {
-        return Place;
-    }
-
-    public void setEdDate(String edDate) {
-        this.Place = Place;
     }
 
     @Override
     public String toString() {
         return "myFotball{" +
-                "Place='" + Place + '\'' +
-                ", Date='" + Date + '\'' +
+                "TeamName='" + TeamName + '\'' +
+                ", date='" + date + '\'' +
+                ", id='" + id + '\'' +
+                ", Place='" + Place + '\'' +
                 ", Time='" + Time + '\'' +
-                ", ed2Teams='" + ed2Teams + '\'' +
                 '}';
     }
 }
