@@ -28,7 +28,7 @@ public class MyFootballTable extends SQLiteOpenHelper
     @Override
     public void onCreate(SQLiteDatabase db)
     {
-      String sqlCreate = "CREATE TABLE " + TABLE_CONTACTS+ "("+KEY_ID+ " INTEGER PRIMARY KEY ," +KEY_ED2TEAMS + "TEXT" +KEY_EDDATE +"TEXT,"+KEY_EDPLACE+"TEXT"+KEY_EDTIME+"TEXT"+KEY_ID +"TEXT"+ " )";
+      String sqlCreate = "CREATE TABLE " + TABLE_CONTACTS+ "("+KEY_ID+ " INTEGER PRIMARY KEY ," +KEY_TEAMNAME + "TEXT" +KEY_EDDATE +"TEXT,"+KEY_EDPLACE+"TEXT"+KEY_EDTIME+"TEXT"+KEY_ID +"TEXT"+ " )";
       db.execSQL(sqlCreate);
 
     }
@@ -55,10 +55,10 @@ public class MyFootballTable extends SQLiteOpenHelper
             SQLiteDatabase db = this.getWritableDatabase();
             ContentValues values = new ContentValues();
             values.put( KEY_EDTIME, mFotball.getTime() );
-            values.put( KEY_EDPLACE, mFotball() );
-            values.put( KEY_ED2TEAMS, myFotball.geted2Teams() );
-            values.put( KEY_EDDATE, myFotball.getDate() );
-            int num = db.update( TABLE_CONTACTS, values, KEY_ID + "=" + myFotball.getid() , null );
+            values.put( KEY_EDPLACE, mFotball.getPlace() );
+            values.put( KEY_TEAMNAME, mFotball.getTeamName() );
+            values.put( KEY_EDDATE, mFotball.getDate() );
+            int num = db.update( TABLE_CONTACTS, values, KEY_ID + "=" + mFotball.getId() , null );
             db.close();
             return num;
 
@@ -67,7 +67,7 @@ public class MyFootballTable extends SQLiteOpenHelper
 
         public int deletContactByld(myFotball fotball) {
             SQLiteDatabase db = this.getWritableDatabase();
-            int num= db.delete( TABLE_CONTACTS ,  KEY_ID + "=" + myFotball.getid() , null);
+            int num= db.delete( TABLE_CONTACTS ,  KEY_ID + "=" + fotball.getId() , null);
             db.close();
             return num;
         }
@@ -82,7 +82,7 @@ public class MyFootballTable extends SQLiteOpenHelper
             while (flag==true)
             {
                myFotball fotball=new myFotball(  );
-                fotball.set(Cursor.setLong(0));
+                fotball.setId(Cursor.setLong(0));
             }
 
         }
