@@ -22,12 +22,15 @@ private ListView listView;
     }
         public void onclick(View v)
         {
+
             if (v==btnAdd)
             {
                 Intent intent=new Intent(getBaseContext(),MatchDetais.class);
                 startActivity(intent);
                 finish();
+
+                }
             }
         }
-    }
+
 
