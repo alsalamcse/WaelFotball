@@ -29,13 +29,18 @@ public class MatchDetais extends AppCompatActivity {
             String te=ed2Teams.getText().toString();
             String d=edDate.getText().toString();
             String p=edPlace.getText().toString();
-            MainActivity  MyFootball=new MainActivity ();
-            MyFootball.setedTime(t);
-            MyFootball.set2Teams(te);
-            MyFootball.setDate(d);
-            MyFootball.setplace(p);
-            MainActivity MyFootball =new MainActivity(this);
-            MyFootball.MainActicity (MyFootball);
+
+           MyFootball  football=new MyFootball ();
+            football.setTeamName( te );
+          football.setDate( d );
+          football.setPlace( p );
+          football.setTime( t );
+
+
+            MyFootballTable myFootballTable =new MyFootballTable(this);
+
+            myFootballTable.matchDetais (football);
+
             Intent intent = new Intent(getBaseContext(), MainActivity.class);
             startActivity(intent);
             finish();
