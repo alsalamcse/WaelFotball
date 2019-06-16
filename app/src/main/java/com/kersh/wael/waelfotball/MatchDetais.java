@@ -31,7 +31,11 @@ public class MatchDetais extends AppCompatActivity {
             String p=edPlace.getText().toString();
 
            MyFootball  football=new MyFootball ();
-            football.setTeamName( te );
+
+           double ss=Double.parseDouble( t );
+            double oo=Double.parseDouble( d );
+
+           football.setTeamName( te );
           football.setDate( d );
           football.setPlace( p );
           football.setTime( t );
